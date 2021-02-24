@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html class="no-js" lang="ua" ng-app="listApp">
+
+<head>
+    <meta charset="utf-8">
+    <title>Months List</title>
+    <script src="Lib/angular.js"></script>
+    <link href="Lib/bootstrap.min.css" rel="stylesheet"/>
+    <script>
+        var model = {
+          currentYear: "2021",
+          months: [
+              {name: "Січень", days: "31"},
+              {name: "Лютий", days: "28"},
+              {name: "Березень", days: "31"},
+              {name: "Квітень", days: "30"}
+          ]
+        };
+        var listApp = angular.module("listApp", []);
+        listApp.controller("listCtrl", function ($scope) {
+            $scope.list = model;
+        });
+    </script>
+</head>
+<body ng-controller="listCtrl">
+<div class = "container">
+    <div class="page-header">
+        <h1>Місяці року</h1>
+        <h3>Рік: {{list.currentYear}}, кількість записів: {{list.months.length}}</h3>
+    </div>
+</div>
+<div class="panel">
+    <div class="input-group">
+    <input class="form-control"/>
+    <span class="input-group-btn">
+      <button class="btn btn-default">Add</button>
+    </span>
+    </div>
+    <table class="table table-hover">
+      <thead>
+        <tr>
+          <th>Назва</th>
+          <th>Кількість днів</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr><td>Січень</td><td>31</td></tr>
+        <tr><td>Лютий</td><td>28</td></tr>
+        <tr><td>Березень</td><td>31</td></tr>
+        <tr><td>Квітень</td><td>30</td></tr>
+        <tr><td>Травень</td><td>31</td></tr>
+      </tbody>
+    </table>
+</div>
+
+
+</body>
+
+</html>
